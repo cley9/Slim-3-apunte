@@ -26,3 +26,15 @@ $app->run();
 ```php
 
 ```
+### Apunte de Slim 3 
+```php
+// tipos de routers validos en slim 3
+$app->get('/', function ($request, $response, $args) {
+    $response->getBody()->write("this is ligth");
+    return $response;
+});
+
+$app->get('/', 'CrudController:mark');
+$app->get('/', CrudController::class . ':mark')
+->setName('hellopage');
+```

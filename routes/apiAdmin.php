@@ -1,35 +1,38 @@
 <?php
 use Slim\App;
-// use controllers\admin\CrudController;
-// use controllers\admin\CrudController as cley;
-// require __DIR__.'/controllers/admin/CrudController.php';
+use Firebase\JWT\JWT;
+use Tuupola\Middleware\JwtAuthentication;
 
-// return function (App $app){
-//     $app->get('/', 'CrudController:home');
-// };
-// return function (App $app) {
-//     $app->get('/', 'CrudController:mark');
-//     // $app->get('/', function($request, $response, $args){
-//     //     $response->getBody()->write("this is ligth");
-//     //         return $response;
-//     // });
-//     // Agrega más rutas y métodos de controlador aquí según sea necesario
-// };
+require __DIR__ . '../../app/controllers/admin/CrudController.php';
+require __DIR__ . '../../app/controllers/admin/ViewController.php';
+require __DIR__ . '../../app/controllers/admin/LoginController.php';
+require __DIR__ . '../../app/middleware/validationAdmin.php';
 
-// funcional  
-// $app->get('/', function ($request, $response, $args) {
-//     $response->getBody()->write("this is ligth");
-//     return $response;
-// });
+$app->post('/registro-admin', LoginController::class . ':createAdmin')->setName('create.api.admin');
 
-$app->get('/', 'CrudController:mark');
-// $app->get('/', CrudController::class . ':mark')
-// ->setName('hellopage');
-// $app->get('/', 'CrudController:mark');
-// $app->get('/', 'CrudController:mark');
-// $app->get('/', CrudController::class . ':mark')
-//     ->setName('hellopage');
+// $app->add(new JwtAuthentication([
+//     "path" => "/api", /* or ["/api", "/admin"] */
+//     "secret" => "qwertyuiopasdfghjklzxcvbnm123456",
+//     // "algorithm" => ["HS256", "HS384"]
+//     // "after" => function ($response, $arguments) {
+//     //     return $response->withHeader("X-Brawndo", "plants crave");
+//     // }
+//     "error" => function ($response, $arguments) {
+//         $data["status"] = "error";
+//         $data["message"] = $arguments["message"];
+//         $response->getBody()->write(
+//             json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT)
+//         );
+//         return $response->withHeader("Content-Type", "application/json");
+//     }
+// ]));
 
-    // $this->app->get('/', CrudController::class . 'mark');
-// $app->get('/', [cley::class,'mark']);
-// $app->run();
+$app->group('/api/v1/admin', function () use ($app) {
+    // $app->get('/home', function () use ($app) {});
+    // $app->post('/registro-user', function ($request, $response, $args) {
+    // $app->get('/home', ViewController::class .':home')->setName('home.api.admin');
+
+    $app->get('/home', ViewController::class . ':home')->setName('home.api.admin');
+
+})->add(new validationAdmin());
+?>

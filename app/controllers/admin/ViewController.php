@@ -2,9 +2,19 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Firebase\JWT\JWT;
+require __DIR__ ."/../BaseController.php";
+// require_once __DIR__ . '/../BaseController.php';
 
-class ViewController
+class ViewController 
+// class ViewController extends BaseController
 {
+    protected $db;
+
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
     public function home(Request $request, Response $response, $args)
     {
         try {
@@ -30,4 +40,34 @@ class ViewController
             return $response->withJson(['error' => $e->getMessage()], 500);
         }
     }
+    public function save(Request $request, Response $response, $args)	{
+        $sql ="select * from user";
+        $sth = $this->db->prepare($sql);
+        $sth->execute();
+// $productos = $StatusInsert->fetchAll(PDO::FETCH_OBJ);
+$productos = $sth->fetchAll(PDO::FETCH_ASSOC);
+    return $response->withJson($productos);
+    }
+
+
+    public function yun(Request $request, Response $response, $args)	{
+        $sql ="select * from user";
+        $sth = $this->db->prepare($sql);
+        $sth->execute();
+// $productos = $StatusInsert->fetchAll(PDO::FETCH_OBJ);
+$productos = $sth->fetchAll(PDO::FETCH_ASSOC);
+    return $response->withJson($productos);
+    
+// return $response->withJson(["error"=> "gaaaaaaaaa"],200);
+// try {
+//     $sql = "select * from user";
+//     $sth = $this->db->prepare($sql);
+//     $sth->execute();
+//     $productos = $sth->fetchAll(PDO::FETCH_ASSOC);
+//     return $response->withJson($productos);
+// } catch (Exception $e) {
+//     return $response->withJson(['error' => $e->getMessage()], 500);
+// }
+}
+
 }

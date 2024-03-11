@@ -5,9 +5,11 @@
 # Recursos Tech 
 - Importar la coleción del apiRest a tu postman, está en la ruta 
 > /src/Tech.postman_collection 
-- WebSite deployado the proyect Tech in this url [ https://]
+### Demo en producción https://agrupec.com
+- WebSite deployado the proyect Tech in this url [ https://agrupec.com]
 - Repositorio GitHub
  > Back-end [https://github.com/cley9/Slim-3-apunte]
+ 
  > Frond-end [https://github.com/cley9/React-17]
 # Deploy local
 - Descargar el proyecto Tech back-end [ ]

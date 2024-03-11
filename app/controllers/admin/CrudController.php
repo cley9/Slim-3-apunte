@@ -1,9 +1,4 @@
 <?php
-// namespace controllers\admin;
-// use Psr\Log\LoggerInterface;
-// use Psr\Http\Message\ResponseInterface as Response;
-// use Psr\Http\Message\ServerRequestInterface as Request;
-// use App\DataAccess\_DataAccess;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -16,14 +11,12 @@ class CrudController
     }
 
     public function mark(Request $request, Response $response, $args)
-    // public function home($request, $response, $args)
     {
         $response->getBody()->write("¡Hola, mundo desde el controlador!");
         return $response;
-        // return 23;
     }
 
-    public function createCient(Request $request, Response $response, $args)
+    public function createClient(Request $request, Response $response, $args)
     {
         $newClient = $request->getParsedBody();
         $statusHead = 0;
@@ -67,11 +60,11 @@ class CrudController
             ];
             $statusHead = 401;
         } else if (strlen($newClient["dni"]) != 8) {
+            $statusHead = 400;
             $bodyObj = [
-                "status" => 401,
+                "status" => $statusHead,
                 "message" => "El dni debe de tener exactamente 8 caracteres ",
             ];
-            $statusHead = 401;
         } else {
             $consClient = $request->getParsedBody();
             $sql = "select * from client where dni=:dniClient";
@@ -129,7 +122,7 @@ class CrudController
         $bodyObj = [
             "status" => $statusHead,
             "message" => "Lista de clientes",
-            "list client" => $listClient
+            "list_client" => $listClient
         ];
         return $response->withJson($bodyObj, $statusHead);
     }
@@ -228,7 +221,7 @@ class CrudController
                 $stmt->bindParam(':dniClient', $dniClient);
                 $stmt->execute();
                 if ($stmt->rowCount() > 0) {
-                    $statusHead = 201;
+                    $statusHead = 200;
                     $bodyObj = [
                         "status" => $statusHead,
                         "message" => "Cliente con dni " . $dniClient . " fue eliminado ",

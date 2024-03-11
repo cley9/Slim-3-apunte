@@ -20,7 +20,7 @@ class validationAdmin
                 return $response->withHeader("Content-Type", "application/json")->withStatus(403);
             }
         } catch (Exception $e) {
-            return $response->withJson(['error fda' => $e->getMessage()], 500);
+            return $response->withJson(['error' => $e->getMessage()], 500);
         }
     }
 }

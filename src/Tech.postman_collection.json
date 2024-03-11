@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "e5210543-424c-48d2-a715-451fb90ce477",
+		"name": "Tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7642884"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "Crud client",
+					"item": [
+						{
+							"name": "create client",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJtYXJrIiwiZW1haWwiOiJtYXJrQGdtYWlsLmNvbSIsInJvbCI6MX0.AdZWp31M_Q3jVwOFfwHglYhFPTQrDt7mlvo7C02ltkQ",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjF9.fZrjbg00b7vuxmXFr2bX6RDJuQol8U-U_xm0h3dI3fc",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjR9.syYLAW31U3CcxCi8Z42_mCnY8oT28d8v7q8i8UoFcBk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"cley\",\r\n    \"apellido\":\"tonero mondalgo\",\r\n    \"edad\":23,\r\n    \"fecha_de_nacimiento\": \"2000-01-19\",\r\n    \"dni\": 22713881\r\n}\r\n// {\r\n//             \"name\": \"dfa\",\r\n//             \"apellido\": \"dfa\",\r\n//             \"edad\": 23,\r\n//             \"fecha_de_nacimiento\": \"2024-03-10\",\r\n//             \"dni\": \"23434845\"\r\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/admin/create-client",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"create-client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list client",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJtYXJrIiwiZW1haWwiOiJtYXJrQGdtYWlsLmNvbSIsInJvbCI6MX0.AdZWp31M_Q3jVwOFfwHglYhFPTQrDt7mlvo7C02ltkQ",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjF9.fZrjbg00b7vuxmXFr2bX6RDJuQol8U-U_xm0h3dI3fc",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjR9.syYLAW31U3CcxCi8Z42_mCnY8oT28d8v7q8i8UoFcBk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/admin/list-client",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"list-client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update client",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJtYXJrIiwiZW1haWwiOiJtYXJrQGdtYWlsLmNvbSIsInJvbCI6MX0.AdZWp31M_Q3jVwOFfwHglYhFPTQrDt7mlvo7C02ltkQ",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjF9.fZrjbg00b7vuxmXFr2bX6RDJuQol8U-U_xm0h3dI3fc",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjR9.syYLAW31U3CcxCi8Z42_mCnY8oT28d8v7q8i8UoFcBk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n            \"name\": \"mark\",\r\n            \"apellido\": \"tonero mondalgo\",\r\n            \"edad\": 23,\r\n            \"fecha_de_nacimiento\": \"2000-01-19\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/admin/update-client/77712228",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"update-client",
+										"77712228"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete client",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJtYXJrIiwiZW1haWwiOiJtYXJrQGdtYWlsLmNvbSIsInJvbCI6MX0.AdZWp31M_Q3jVwOFfwHglYhFPTQrDt7mlvo7C02ltkQ",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjF9.fZrjbg00b7vuxmXFr2bX6RDJuQol8U-U_xm0h3dI3fc",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjR9.syYLAW31U3CcxCi8Z42_mCnY8oT28d8v7q8i8UoFcBk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/admin/delete-client/227138812",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"delete-client",
+										"227138812"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "home",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJub21icmUiOiJtYXJrIiwiZW1haWwiOiJtYXJrQGdtYWlsLmNvbSIsInJvbCI6MX0.AdZWp31M_Q3jVwOFfwHglYhFPTQrDt7mlvo7C02ltkQ",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjF9.fZrjbg00b7vuxmXFr2bX6RDJuQol8U-U_xm0h3dI3fc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJyb2wiOjR9.syYLAW31U3CcxCi8Z42_mCnY8oT28d8v7q8i8UoFcBk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/admin/home",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": []
+		},
+		{
+			"name": "create Auth",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"mark\",\r\n    \"email\": \"mark@gmail.com\",\r\n    \"rol\":1,\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registro-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registro-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"mark\",\r\n    \"email\": \"mark@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registro-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registro-admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

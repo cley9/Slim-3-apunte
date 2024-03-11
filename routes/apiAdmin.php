@@ -8,6 +8,12 @@ require __DIR__ . '../../app/controllers/admin/LoginController.php';
 require __DIR__ . '../../app/middleware/validationAdmin.php';
 
 $app->post('/registro-admin', LoginController::class . ':createAdmin')->setName('create.api.admin');
+// $app->post('/create-client', function ($request, $response, $args) use ($app) {
+//     $container = $app->getContainer();
+//     $db = $container->get('db');
+//     $LoginController = new LoginController($db);
+//     return $LoginController->createAdmin($request, $response, $args);
+// });
 
 $app->group('/api/v1/admin', function () use ($app) {
         
@@ -25,7 +31,7 @@ $app->group('/api/v1/admin', function () use ($app) {
         $container = $app->getContainer();
         $db = $container->get('db');
         $CrudController = new CrudController($db);
-        return $CrudController->createCient($request, $response, $args);
+        return $CrudController->createClient($request, $response, $args);
     });
 
     $app->get('/list-client', function ($request, $response, $args) use ($app) {

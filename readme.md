@@ -55,7 +55,14 @@
 #### Nota : Primero debes de create una cuenta administrador para que obtengas el token, debido a que la rutas estan protegidas, esto quiere decir que solo el rol admin puede acceder . 
 
 
+# Ahora descarga el GitHub del entorno del Frond-end 
+- Repositorio del git [https://github.com/cley9/React-17] 
+- Sigue los pasos que indica en el repositorio del frond-end
 
+
+
+# Omitir lo de a bajo, es para crear proyecto
+#### Nota : Lo de a bajo son apunte de como se crea un proyecto en Slim 3
 # Instalación de Slim 3 Manual
 ### Requisito
 - Servidor web con reescritura de URL

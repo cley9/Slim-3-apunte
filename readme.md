@@ -2,10 +2,13 @@
 - Tener instalado Php>7.4
 - Mysql 8
 - Tener instalado Composer de manera global
-# Archivos 
+# Recursos Tech 
 - Importar la coleción del apiRest a tu postman, está en la ruta 
 > /src/Tech.postman_collection 
 - WebSite deployado the proyect Tech in this url [ https://]
+- Repositorio GitHub
+ > Back-end [https://github.com/cley9/Slim-3-apunte]
+ > Frond-end [https://github.com/cley9/React-17]
 # Deploy local
 - Descargar el proyecto Tech back-end [ ]
 - Ejecuta composer install
